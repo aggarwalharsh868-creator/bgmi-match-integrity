@@ -44,38 +44,37 @@ This project builds a simulated analytical system to investigate these challenge
 ## System Architecture
 
 ```text
-             SIMULATED GAME TELEMETRY
-                       |
-                       v
+                  run_pipeline.py
+                        |
+                        v
                   simulate.py
-                       |
-                       v
-                 ingest.py
-             Data Validation
-             Data Quarantine
-                       |
-                       v
-                SQLITE WAREHOUSE
-                       |
-          +------------+------------+
-          |                         |
-          v                         v
-      features.py             match_health.py
-      Player Analytics        Match Monitoring
-          |                         |
-          v                         v
-       detect.py              matchmaker_sim.py
-       ML Detection           Queue Simulation
-          |                         |
-          +------------+------------+
-                       |
-                       v
-                   report.py
-                       |
-                       v
-                    OUTPUTS
-             CSV / JSON / Charts
-```
+             Synthetic Game Telemetry
+                        |
+                        v
+                   ingest.py
+             Validation & Quarantine
+                        |
+                        v
+                SQLite Warehouse
+                        |
+              +---------+---------+
+              |                   |
+              v                   v
+          features.py        match_health.py
+          SQL + Stats        Health Alerts
+              |                   |
+              v                   v
+           detect.py       matchmaker_sim.py
+        ML + Policy         Queue Simulation
+              |                   |
+              +---------+---------+
+                        |
+                        v
+                    report.py
+                        |
+                        v
+                     outputs/
+                 CSV / JSON / Charts
 
 ## 1. Player Activity Analytics
 
@@ -206,13 +205,25 @@ Validation includes:
 - Hits exceeding shots
 - Negative values
 
-## Project Structure
+
+### 2. Project Structure replace karo
+
+Purana `## Project Structure` section delete karke ye paste karo:
 
 ```text
+## Project Structure
+
 bgmi-match-integrity/
 │
 ├── outputs/
 │   ├── charts/
+│   │   ├── 01_activity.png
+│   │   ├── 02_scores.png
+│   │   ├── 03_false_positives.png
+│   │   ├── 04_genuine_slices.png
+│   │   ├── 05_disconnect_alert.png
+│   │   ├── 06_queue_by_tier.png
+│   │   └── 07_matchmaker_sim.png
 │   ├── daily_health.csv
 │   ├── detection_metrics.json
 │   ├── dq_report.json
@@ -228,25 +239,28 @@ bgmi-match-integrity/
 │   └── lobby_health.sql
 │
 ├── src/
-│   ├── simulate.py
-│   ├── ingest.py
+│   ├── __init__.py
+│   ├── config.py
 │   ├── db.py
-│   ├── features.py
 │   ├── detect.py
-│   ├── run_detection.py
+│   ├── features.py
+│   ├── ingest.py
 │   ├── match_health.py
 │   ├── matchmaker_sim.py
 │   ├── report.py
-│   └── config.py
+│   ├── run_detection.py
+│   └── simulate.py
 │
 ├── tests/
+│   ├── __init__.py
 │   └── test_pipeline.py
 │
+├── .gitignore
 ├── requirements.txt
 ├── run_pipeline.py
-├── .gitignore
 └── README.md
-```
+
+Note: data/ is generated at runtime and excluded through .gitignore.
 
 ## Installation & Execution
 
