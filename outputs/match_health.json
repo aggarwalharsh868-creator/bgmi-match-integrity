@@ -1,0 +1,91 @@
+{
+  "n_matches": 4960,
+  "avg_queue_s": 39.8,
+  "p95_queue_s": 90.2,
+  "disconnect_rate_pct": 2.73,
+  "avg_bots_per_match": 0.26,
+  "matches_with_bots_pct": 11.6,
+  "wide_lobby_pct": 6.2,
+  "alerts": {
+    "disconnect_spikes": [
+      {
+        "day": "2026-10-17",
+        "region": "IN-South",
+        "dc_rate_pct": 34.43,
+        "robust_z": 77.5
+      }
+    ],
+    "volume_drops": [
+      {
+        "day": "2026-10-09",
+        "region": "IN-North",
+        "ratio": 0.32
+      }
+    ]
+  },
+  "injected": {
+    "network_incident": "IN-South 2026-10-17",
+    "logging_gap": "IN-North 2026-10-09"
+  },
+  "queue_by_tier_period": [
+    {
+      "tier": "<1200",
+      "off-peak (2-9h)": "107.3",
+      "peak": "41.9"
+    },
+    {
+      "tier": "1200-1500",
+      "off-peak (2-9h)": "68.5",
+      "peak": "27.5"
+    },
+    {
+      "tier": "1500-1800",
+      "off-peak (2-9h)": "69.1",
+      "peak": "27.5"
+    },
+    {
+      "tier": "1800-2100",
+      "off-peak (2-9h)": "104.2",
+      "peak": "41.8"
+    },
+    {
+      "tier": "2100+",
+      "off-peak (2-9h)": "162.0",
+      "peak": "63.8"
+    }
+  ],
+  "lobby_by_period": [
+    {
+      "period": "off-peak (2-9h)",
+      "mmr_range": 1405.666,
+      "wide_share": 0.443,
+      "bots": 1.871
+    },
+    {
+      "period": "peak",
+      "mmr_range": 992.212,
+      "wide_share": 0.0,
+      "bots": 0.0
+    }
+  ],
+  "cheater_exposure": {
+    "matches_with_cheater_pct": 99.9,
+    "avg_cheaters_per_match": 6.91,
+    "policies": {
+      "quarantine_auto_only": {
+        "matches_with_cheater_pct": 99.7,
+        "avg_cheaters_per_match": 5.33,
+        "quarantined_players": 39,
+        "quarantined_genuine": 0,
+        "cheaters_isolated_pct": 18.5
+      },
+      "quarantine_auto_plus_review": {
+        "matches_with_cheater_pct": 6.9,
+        "avg_cheaters_per_match": 0.07,
+        "quarantined_players": 311,
+        "quarantined_genuine": 111,
+        "cheaters_isolated_pct": 94.8
+      }
+    }
+  }
+}

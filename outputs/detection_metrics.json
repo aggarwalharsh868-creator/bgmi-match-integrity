@@ -1,0 +1,103 @@
+{
+  "thresholds": {
+    "tau_auto": 0.9,
+    "tau_review": 0.03,
+    "fp_allowed": 2
+  },
+  "holdout": {
+    "n_players": 1165,
+    "n_cheaters": 62,
+    "roc_auc": 0.998,
+    "pr_auc": 0.9722
+  },
+  "policy": {
+    "auto_flagged": 15,
+    "auto_false_positives": 0,
+    "auto_precision": 1.0,
+    "auto_recall": 0.2419,
+    "review_queue": 74,
+    "review_precision": 0.6216,
+    "recall_auto_plus_review": 0.9839,
+    "genuine_wrongly_auto_actioned_pct": 0.0,
+    "genuine_sent_to_review_pct": 2.539
+  },
+  "genuine_slices": [
+    {
+      "group": "normal",
+      "genuine_players": 903,
+      "auto_actioned": 0,
+      "human_review": 21,
+      "naive_kd_banned": 6,
+      "iforest_flagged": 14,
+      "insufficient_data": 5
+    },
+    {
+      "group": "elite",
+      "genuine_players": 47,
+      "auto_actioned": 0,
+      "human_review": 2,
+      "naive_kd_banned": 0,
+      "iforest_flagged": 0,
+      "insufficient_data": 0
+    },
+    {
+      "group": "smurf",
+      "genuine_players": 38,
+      "auto_actioned": 0,
+      "human_review": 2,
+      "naive_kd_banned": 37,
+      "iforest_flagged": 1,
+      "insufficient_data": 1
+    },
+    {
+      "group": "high_ping",
+      "genuine_players": 90,
+      "auto_actioned": 0,
+      "human_review": 0,
+      "naive_kd_banned": 1,
+      "iforest_flagged": 0,
+      "insufficient_data": 0
+    },
+    {
+      "group": "new",
+      "genuine_players": 56,
+      "auto_actioned": 0,
+      "human_review": 3,
+      "naive_kd_banned": 2,
+      "iforest_flagged": 0,
+      "insufficient_data": 25
+    }
+  ],
+  "baselines_holdout": {
+    "naive_kd": {
+      "flagged": 57,
+      "false_positives": 46,
+      "precision": 0.193,
+      "recall": 0.1774
+    },
+    "isolation_forest": {
+      "flagged": 52,
+      "false_positives": 15,
+      "precision": 0.7115,
+      "recall": 0.5968
+    }
+  },
+  "recall_by_cheat_type": {
+    "aimbot": {
+      "n": 15,
+      "caught_pct": 100.0
+    },
+    "aimbot+wallhack": {
+      "n": 15,
+      "caught_pct": 100.0
+    },
+    "speedhack": {
+      "n": 17,
+      "caught_pct": 100.0
+    },
+    "wallhack": {
+      "n": 15,
+      "caught_pct": 93.3
+    }
+  }
+}

@@ -1,0 +1,5 @@
+scenario,strategy,players_per_s,lobbies,avg_queue_s,p95_queue_s,avg_bots_per_lobby,lobby_mmr_sd,unfair_slot_pct,still_waiting
+peak,fixed,4.0,361,41.7,90.0,40.85,75.6,0.0,121
+peak,progressive,4.0,253,20.7,55.0,15.38,176.1,1.32,64
+off-peak,fixed,0.5,87,139.9,410.0,69.56,84.6,0.0,57
+off-peak,progressive,0.5,83,49.1,110.0,67.54,226.5,6.53,11

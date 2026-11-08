@@ -1,0 +1,12 @@
+{
+  "rows_in": 497488,
+  "rows_clean": 494266,
+  "rows_rejected": 3222,
+  "by_reason": {
+    "duplicate_match_player": 1488,
+    "null_required_field": 992,
+    "hits_exceed_shots": 494,
+    "negative_value": 248
+  },
+  "orphan_rows": 0
+}
